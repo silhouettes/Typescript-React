@@ -1,9 +1,9 @@
 {
-  "name": "React",
-  "version": "1.0.0",
-  "description": "A simple demo app that illustrates how to use ReactJS, including ES6, WebPack bundling, server-side rendering, flux-like architectures, and immutable data structures",
+  "name": "Typescript-React",
+  "version": "0.0.1",
+  "description": "A simple fork of Jonathan's React demo app that illustrates how to use ReactJS with TypeScript",
   "main": "./src/Main.js",
-  "author": "Jonathan Carter",
+  "author": "Richard Hua",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^4.7.8",
