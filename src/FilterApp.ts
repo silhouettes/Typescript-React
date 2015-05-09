@@ -1,12 +1,19 @@
-import FilterFooter from "./FilterFooter";
-import FilterInput from "./FilterInput";
-import FilterList from "./FilterList";
-import MovieStore from "./MovieStore";
-import Profiler from "./Profiler";
-import PureComponent from "./utils/PureComponent";
-import React from "react";
-import Reflux from "reflux";
+// import FilterFooter = require("./FilterFooter");
+// import FilterInput = require("./FilterInput");
+// import FilterList = require("./FilterList");
+// import MovieStore = require("./MovieStore");
+// import Profiler = require("./Profiler");
+// import PureComponent = require("./utils/PureComponent");
+import React = require("react");
+// import Reflux = require("reflux");
 
+class FilterApp extends React.Component<{},any> {
+   render() {
+      return <div>Hello world!</div>;
+   }
+}
+
+/*
 class FilterApp extends PureComponent {
     constructor() {
         super();
@@ -56,5 +63,6 @@ class FilterApp extends PureComponent {
 // which forces a re-render of the app whenever state is change
 Object.assign(FilterApp.prototype,
               Reflux.connect(MovieStore, "data"));
+*/
 
-export default FilterApp;
+export = FilterApp;

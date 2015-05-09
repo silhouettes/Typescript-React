@@ -1,11 +1,13 @@
-import FilterApp from "../FilterApp";
-import React from "react";
+///<reference path="../lib/_client-references.d.ts"/>
+ 
+import FilterApp = require("../FilterApp");
+import React = require("react");
 
 // The ReactJS CDT extension looks for this global
 // in order to activate itself, and therefore, since
 // we're using modules instead of globals, we need to
 // artificially expose the React object in order
 // to make use of the tools. Hopefully this goes away soon :)
-window.react = React;
+(<any>window).react = React;
 
 React.render(<FilterApp />, document.body);

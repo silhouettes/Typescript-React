@@ -1,18 +1,32 @@
 var gulp = require("gulp");
-
+var gutil = require("gulp-util");
 var webpack = require("webpack");
+
+var onWebPackFinished = function (done, error, stats) {
+    if (error) {
+    	throw new gutil.PluginError("webpack", error, { showStack: true });
+    }
+
+	var jsonStats = stats.toJson();
+    if (jsonStats.errors.length > 0) {
+    	console.log(jsonStats.errors.toString());
+    	throw new gutil.PluginError("webpack", "Project has errors", { showStack: true });
+    } else if (jsonStats.warnings.length > 0) {
+    	console.log(jsonStats.warnings.toString());
+    	throw new gutil.PluginError("webpack", "Project has warnings", { showStack: true });
+    }
+
+    done();
+};
+
 gulp.task("build-client", function (done) {  
     var config = require("./webpack.client.js");
-    webpack(config, function (error, stats) {
-        done();
-    });
+    webpack(config, onWebPackFinished.bind(/*this*/ null, /*firstArg*/ done));
 });
 
 gulp.task("build-server", function (done) {
     var config = require("./webpack.server.js");
-    webpack(config, function (error, stats) {
-        done();
-    });
+    webpack(config, onWebPackFinished.bind(/*this*/ null, /*firstArg*/ done));
 });
 
 var nodemon = require("gulp-nodemon");

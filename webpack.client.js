@@ -1,7 +1,7 @@
 var webpack = require("webpack");
 
 module.exports = {
-    entry: "./src/client/Browser.js",
+    entry: "./src/client/Browser.ts",
     output: {
         path: "./dist/assets",
         filename: "Browser.js",
@@ -10,13 +10,11 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loaders: ["react-hot", "babel?optional=runtime&experimental=true"] }
+            { test: /\.ts$/, exclude: /node_modules/, loaders: ["react-hot", "ts-loader?compiler=jsx-typescript"] }
         ]
     },
     resolve: {
-        alias: {
-            react$: "react/addons"
-        }
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.ts']
     },
     devtool: "source-map",
     plugins: [

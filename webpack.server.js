@@ -10,10 +10,10 @@ fs.readdirSync("./node_modules")
         nodeModules[mod] = "commonjs " + mod;
     });
 
-nodeModules["react"] = "commonjs react/addons";
+nodeModules["react"] = "commonjs react";
 
 module.exports = {
-    entry: "./src/server/Server.js",
+    entry: "./src/server/Server.ts",
     output: {
         path: "./dist",
         filename: "Server.js",
@@ -23,8 +23,11 @@ module.exports = {
     externals: nodeModules,
     module: {
         loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loader: "babel?optional=runtime&experimental=true" }
+            { test: /\.ts$/, exclude: /node_modules/, loader: "ts-loader?compiler=jsx-typescript" }
         ]
+    },
+    resolve: {
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.ts']
     },
     devtool: "source-map",
     plugins: [

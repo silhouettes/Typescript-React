@@ -1,21 +1,23 @@
-import express from "express";
-import FilterApp from "../FilterApp";
-import React from "react";
+///<reference path="../lib/_server-references.d.ts"/>
+
+import Express = require("express");
+import FilterApp = require("../FilterApp");
+import React = require("react");
 
 // This server supports serving two things:
 // 1) The app itself, which is dynamically generated using React
 // 2) All of the static assets (e.g. JS, CSS) for the app
 
-let server = express();
-server.get("/", (req, res) => {
+var server = Express();
+server.get("/", (req: Express.Request, res: Express.Response) => {
     // 1) Generate a string of HTML that represents the
     //    the body content of the app
-    let dynamicContent = React.renderToString(<FilterApp />);
+    var dynamicContent = React.renderToString(<FilterApp />);
 
     // 2) Wrap the app inside the neccesary HTML "scaffold"
     //    using static markup, since we don't need the <html>, <body>, etc.
     //    elements to include the "magic IDs" that React would add to them
-    let staticContent =
+    var staticContent =
         React.renderToStaticMarkup(
             <html>
                 <head>
@@ -30,11 +32,11 @@ server.get("/", (req, res) => {
             </html>
         );
 
-    res.setHeader("Content-Type", "text/html");
-    res.end(staticContent);
+    res.header("Content-Type", "text/html");
+    res.send(staticContent);
 });
 
-server.use("/assets", express.static("./dist/assets"));
+server.use("/assets", Express.static("./dist/assets"));
 
 server.listen(8000);
 
