@@ -1,6 +1,6 @@
 import { clearExclusions, redo, undo } from "./Actions";
-import PureComponent from "./utils/PureComponent";
-import React from "react";
+import PureComponent = require("./utils/PureComponent");
+import React = require("react/addons");
 
 class FilterFooter extends PureComponent {
     static get propTypes() {
@@ -41,4 +41,4 @@ let styles = {
     }
 }
 
-export default FilterFooter;
+export = FilterFooter;

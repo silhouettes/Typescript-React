@@ -1,4 +1,4 @@
-import React from "react";
+import React = require("react/addons");
 
 // This is simply a helper that allows every
 // component to inherit from a base-class instead
@@ -10,4 +10,4 @@ class PureComponent extends React.Component {
 Object.assign(PureComponent.prototype,
               React.addons.PureRenderMixin);
 
-export default PureComponent;
+export = PureComponent;

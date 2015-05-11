@@ -10,8 +10,6 @@ fs.readdirSync("./node_modules")
         nodeModules[mod] = "commonjs " + mod;
     });
 
-nodeModules["react"] = "commonjs react";
-
 module.exports = {
     entry: "./src/server/Server.ts",
     output: {

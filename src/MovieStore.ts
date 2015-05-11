@@ -1,6 +1,6 @@
-import Actions from "./Actions";
-import Immutable from "immutable";
-import Reflux from "reflux";
+import Actions = require("./Actions");
+import Immutable = require("immutable");
+import Reflux = require("reflux");
 
 let MovieStore = Reflux.createStore({
     listenables: Actions,
@@ -57,4 +57,4 @@ let MovieStore = Reflux.createStore({
     }
 });
 
-export default MovieStore;
+export = MovieStore;

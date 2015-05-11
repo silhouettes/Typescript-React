@@ -2,7 +2,7 @@
 
 import Express = require("express");
 import FilterApp = require("../FilterApp");
-import React = require("react");
+import React = require("react/addons");
 
 // This server supports serving two things:
 // 1) The app itself, which is dynamically generated using React

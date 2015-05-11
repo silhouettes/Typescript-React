@@ -1,4 +1,4 @@
-import React from "react";
+import React = require("react/addons");
 
 class Profiler extends React.Component {
     startProfiling() {
@@ -30,4 +30,4 @@ let styles = {
     }
 }
 
-export default Profiler;
+export = Profiler;

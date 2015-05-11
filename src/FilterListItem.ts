@@ -1,6 +1,6 @@
 import { excludeItem } from "./Actions";
-import PureComponent from "./utils/PureComponent";
-import React from "react";
+import PureComponent = require("./utils/PureComponent");
+import React = require("react/addons");
 
 class FilterListItem extends PureComponent {
     static get propTypes() {
@@ -33,4 +33,4 @@ let styles = {
     }
 }
 
-export default FilterListItem;
+export = FilterListItem;

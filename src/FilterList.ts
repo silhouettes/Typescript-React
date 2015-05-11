@@ -1,6 +1,6 @@
-import FilterListItem from "./FilterListItem";
-import PureComponent from "./utils/PureComponent";
-import React from "react";
+import FilterListItem = require("./FilterListItem");
+import PureComponent = require("./utils/PureComponent");
+import React = require("react/addons");
 
 class FilterList extends PureComponent {
     static get propTypes() {
@@ -53,4 +53,4 @@ let styles = {
     }
 }
 
-export default FilterList;
+export = FilterList;

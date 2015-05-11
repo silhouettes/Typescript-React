@@ -1,7 +1,7 @@
 ///<reference path="../lib/_client-references.d.ts"/>
  
 import FilterApp = require("../FilterApp");
-import React = require("react");
+import React = require("react/addons");
 
 // The ReactJS CDT extension looks for this global
 // in order to activate itself, and therefore, since

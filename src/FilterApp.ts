@@ -4,7 +4,7 @@
 // import MovieStore = require("./MovieStore");
 // import Profiler = require("./Profiler");
 // import PureComponent = require("./utils/PureComponent");
-import React = require("react");
+import React = require("react/addons");
 // import Reflux = require("reflux");
 
 class FilterApp extends React.Component<{},any> {

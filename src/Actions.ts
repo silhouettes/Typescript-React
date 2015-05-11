@@ -1,4 +1,4 @@
-import Reflux from "reflux";
+import Reflux = require("reflux");
 
 let Actions = Reflux.createActions([
     "clearExclusions",
@@ -7,4 +7,4 @@ let Actions = Reflux.createActions([
     "undo"
 ]);
 
-export default Actions;
+export = Actions;

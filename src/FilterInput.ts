@@ -1,5 +1,5 @@
-import PureComponent from "./utils/PureComponent";
-import React from "react";
+import PureComponent = require("./utils/PureComponent");
+import React = require("react/addons");
 
 class FilterInput extends PureComponent {
     static get propTypes() {
@@ -33,4 +33,4 @@ let styles = {
     }
 }
 
-export default FilterInput;
+export = FilterInput;

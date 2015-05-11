@@ -1,6 +1,7 @@
 var gulp = require("gulp");
 var gutil = require("gulp-util");
 var webpack = require("webpack");
+var nodemon = require("gulp-nodemon");
 
 var onWebPackFinished = function (done, error, stats) {
     if (error) {
@@ -29,7 +30,6 @@ gulp.task("build-server", function (done) {
     webpack(config, onWebPackFinished.bind(/*this*/ null, /*firstArg*/ done));
 });
 
-var nodemon = require("gulp-nodemon");
 gulp.task("serve", ["build"], function () {
     nodemon({
         script: "./dist/Server.js",
