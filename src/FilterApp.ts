@@ -3,18 +3,18 @@
 // import FilterList = require("./FilterList");
 // import MovieStore = require("./MovieStore");
 // import Profiler = require("./Profiler");
-// import PureComponent = require("./utils/PureComponent");
+import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 // import Reflux = require("reflux");
 
-class FilterApp extends React.Component<{},any> {
-   render() {
-      return <div>Hello world!</div>;
-   }
-}
+class FilterApp extends PureComponent<{}, any> {
+    // http://stackoverflow.com/questions/15267705/typescript-compiling-removes-unreferenced-imports
+    private _useReactImport: typeof React = React;
+    render() {
+        return <div>Hello pure component!</div>;
+    }
 
-/*
-class FilterApp extends PureComponent {
+    /*
     constructor() {
         super();
 
@@ -57,8 +57,10 @@ class FilterApp extends PureComponent {
             </div>
         );
     }
+    */
 };
 
+/*
 // This hooks up the FilterApp component to the MovieStore,
 // which forces a re-render of the app whenever state is change
 Object.assign(FilterApp.prototype,

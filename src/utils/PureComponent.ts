@@ -4,10 +4,10 @@ import React = require("react/addons");
 // component to inherit from a base-class instead
 // of needing to mix-in the PureRenderMixin
 
-class PureComponent extends React.Component {
+class PureComponent<P, S> extends React.Component<P, S> {
+    public shouldComponentUpdate(nextProps: P, nextState: S, nextContext: any): boolean {
+        return React.addons.PureRenderMixin.shouldComponentUpdate(nextProps, nextState, nextContext);
+    }
 }
-
-Object.assign(PureComponent.prototype,
-              React.addons.PureRenderMixin);
 
 export = PureComponent;
