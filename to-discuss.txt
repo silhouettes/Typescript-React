@@ -10,12 +10,14 @@ Talk about:
 - Which typescript compiler
 - External libraries
 
-
 JSX-Typescript:
 - No ES6 support
 - React import can be optimized out
 - No typescript definition for Reflux (i.e. limited support for smaller libraries)
 
+Intellisense:
+- Works fine in VSCode and VS
+- Sublime seems to be using auto-complete, can't figure out why
 
 Compiler:
 - Is managed by ts-loader/package.json for build, as well as Visual Studio .csproj, and requires installation on the system
@@ -24,3 +26,6 @@ Compiler:
 Build:
 - Use command line
 - May be able to configure a tasks.json file to run tasks in VSCode (and VS in the future)
+
+
+tsconfig.json vs csproj

@@ -6,6 +6,7 @@
 declare module "react/addons" {
     // React jsx shim
     function jsx(jsx?: string): ReactElement<any>;
+    function __spread(...args: any[]): any; // for JSX Spread Attributes
 
     //
     // React Elements
