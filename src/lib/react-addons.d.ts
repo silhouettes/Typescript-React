@@ -4,6 +4,9 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 declare module "react/addons" {
+    // React jsx shim
+    function jsx(jsx?: string): ReactElement<any>;
+
     //
     // React Elements
     // ----------------------------------------------------------------------

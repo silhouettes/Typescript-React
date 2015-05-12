@@ -10,18 +10,16 @@ interface Props {
 }
 
 class FilterListItem extends PureComponent<Props, any> {
-    private _useReact = React;
-
     render() {
         var { name, rating, style } = this.props;
         var listItemStyle = ES6Utils.assign(style, styles.listItem);
 
-        return (
+        return React.jsx(`
             <li style={listItemStyle}>
                 <span>{name} ({rating}/10)</span>
                 <a style={styles.excludeLink} onClick={Actions.excludeItem.bind(null, name)} href="#">Exclude</a>
             </li>
-        );
+        `);
     }
 }
 

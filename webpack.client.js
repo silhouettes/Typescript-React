@@ -10,7 +10,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.ts$/, exclude: /node_modules/, loaders: ["react-hot", "ts-loader?compiler=jsx-typescript"] }
+            { test: /\.ts$/, exclude: /node_modules/, loaders: ["react-hot", "ts-loader", "ts-jsx-loader"] }
         ]
     },
     resolve: {

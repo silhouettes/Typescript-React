@@ -9,8 +9,6 @@ import React = require("react/addons");
 import Reflux = require("reflux");
 
 class FilterApp extends PureComponent<{}, any> {
-    // http://stackoverflow.com/questions/15267705/typescript-compiling-removes-unreferenced-imports
-    private _useReact = React;
     private _handleChange: React.FormEventHandler;
     private _handleRateChange: React.FormEventHandler;
 
@@ -40,7 +38,7 @@ class FilterApp extends PureComponent<{}, any> {
     render() {
         var exclusionCount = this.state.data.get("exclusions").size;
         
-        return (
+        return React.jsx(`
             <div>
                 <h1>Movie recommendations</h1>
                 <FilterInput
@@ -54,7 +52,7 @@ class FilterApp extends PureComponent<{}, any> {
                     excluded={exclusionCount} />
                 <Profiler />
             </div>
-        );
+        `);
     }
 };
 

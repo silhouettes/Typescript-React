@@ -10,4 +10,4 @@ import React = require("react/addons");
 // to make use of the tools. Hopefully this goes away soon :)
 (<any>window).react = React;
 
-React.render(<FilterApp />, document.body);
+React.render(React.jsx(`<FilterApp />`), document.body);

@@ -9,8 +9,6 @@ interface Props {
 }
 
 class FilterList extends PureComponent<Props, void> {
-    private _useReact = React;
-
     render() {
         // Filter the list of data based on the current query
         var filteredList = this.props.data.get("movies")
@@ -29,18 +27,23 @@ class FilterList extends PureComponent<Props, void> {
 
         if (filteredList.size > 0) {
             // Map each filtered item to its component equivalent
-            var listItems = filteredList.map(movie => (
-                <FilterListItem
-                    key={movie.get("name")}
-                    name={movie.get("name")}
-                    rating={movie.get("rating")}
-                    style={styleBuilder(movie.get("rating"))} />
-            ));
+            var listItems = filteredList.map((movie: any) => {
+                var name: string = movie.get("name");
+                var rating: number = movie.get("rating");
+                var style = styleBuilder(movie.get("rating"));
+                return React.jsx(`
+                    <FilterListItem
+                        key={name}
+                        name={name}
+                        rating={rating}
+                        style={style} />
+                `);
+            });
 
-            element = <ol>{listItems}</ol>;
+            element = React.jsx(`<ol>{listItems}</ol>`);
         }
         else {
-            element = <div style={{ marginBottom: 5 }}>No recommendations match your criteria!</div>;
+            element = React.jsx(`<div style={{ marginBottom: 5 }}>No recommendations match your criteria!</div>`);
         }
         
         return element;

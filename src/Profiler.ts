@@ -12,13 +12,13 @@ class Profiler extends React.Component<{}, any> {
     }
 
     render() {
-        return (
+        return React.jsx(`
             <div style={styles.container}>
                 <hr />
                 <button onClick={this.startProfiling}>Start profiling</button>
                 <button onClick={this.stopProfiling} style={styles.stopProfilingLink}>Stop profiling</button>
             </div>
-        );
+        `);
     }
 }
 

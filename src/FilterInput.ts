@@ -7,10 +7,8 @@ interface Props {
 }
 
 class FilterInput extends PureComponent<Props, void> {
-    private _useReact = React;
-
     render() {
-        return (
+        return React.jsx(`
             <form>
                 <input
                     type="text"
@@ -23,7 +21,7 @@ class FilterInput extends PureComponent<Props, void> {
                         onChange={this.props.onRateChange} />
                 </label>
             </form>
-        );
+        `);
     }
 }
 
