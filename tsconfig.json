@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "sourceMap": true
+    },
+    "files": [
+        "src/client/Browser.ts",
+        "src/server/Server.ts"
+    ]
+}

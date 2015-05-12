@@ -17,3 +17,10 @@ JSX-Typescript:
 - No typescript definition for Reflux (i.e. limited support for smaller libraries)
 
 
+Compiler:
+- Is managed by ts-loader/package.json for build, as well as Visual Studio .csproj, and requires installation on the system
+- Sublime uses our typescript-sublime and will be on edge. VSCode ships with ts 1.5.0 beta support.
+
+Build:
+- Use command line
+- May be able to configure a tasks.json file to run tasks in VSCode (and VS in the future)
