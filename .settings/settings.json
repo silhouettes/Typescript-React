@@ -1,0 +1,4 @@
+// Overwrite settings by placing them into your settings file.
+{
+	"javascript.validate.target": "ES6"
+}

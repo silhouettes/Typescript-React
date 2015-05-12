@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -52,26 +52,28 @@
     <TypeScriptSourceMap>false</TypeScriptSourceMap>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\Actions.ts" />
     <TypeScriptCompile Include="src\client\Browser.ts" />
-    <TypeScriptCompile Include="src\FilterApp.ts" />
-    <TypeScriptCompile Include="src\FilterFooter.ts" />
-    <TypeScriptCompile Include="src\FilterInput.ts" />
-    <TypeScriptCompile Include="src\FilterList.ts" />
-    <TypeScriptCompile Include="src\FilterListItem.ts" />
-    <TypeScriptCompile Include="src\lib\express.d.ts" />
-    <TypeScriptCompile Include="src\lib\immutable.d.ts" />
-    <TypeScriptCompile Include="src\lib\node.d.ts" />
-    <TypeScriptCompile Include="src\lib\react-addons.d.ts" />
-    <TypeScriptCompile Include="src\lib\shim.d.ts" />
-    <TypeScriptCompile Include="src\lib\_client-references.d.ts" />
-    <TypeScriptCompile Include="src\lib\_common-references.d.ts" />
-    <TypeScriptCompile Include="src\lib\_server-references.d.ts" />
-    <TypeScriptCompile Include="src\MovieStore.ts" />
-    <TypeScriptCompile Include="src\Profiler.ts" />
     <TypeScriptCompile Include="src\server\Server.ts" />
-    <TypeScriptCompile Include="src\utils\ES6Utils.ts" />
-    <TypeScriptCompile Include="src\utils\PureComponent.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Actions.ts" />
+    <None Include="src\FilterApp.ts" />
+    <None Include="src\FilterFooter.ts" />
+    <None Include="src\FilterInput.ts" />
+    <None Include="src\FilterList.ts" />
+    <None Include="src\FilterListItem.ts" />
+    <None Include="src\lib\express.d.ts" />
+    <None Include="src\lib\immutable.d.ts" />
+    <None Include="src\lib\node.d.ts" />
+    <None Include="src\lib\react-addons.d.ts" />
+    <None Include="src\lib\shim.d.ts" />
+    <None Include="src\lib\_client-references.d.ts" />
+    <None Include="src\lib\_common-references.d.ts" />
+    <None Include="src\lib\_server-references.d.ts" />
+    <None Include="src\MovieStore.ts" />
+    <None Include="src\Profiler.ts" />
+    <None Include="src\utils\ES6Utils.ts" />
+    <None Include="src\utils\PureComponent.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />

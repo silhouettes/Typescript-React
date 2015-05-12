@@ -5,3 +5,4 @@ dist/
 *.swp
 obj/
 *.user
+*.suo

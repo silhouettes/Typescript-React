@@ -7,6 +7,8 @@ Talk about:
 - ES6
 - Test frameworks
 - SASS
+- Which typescript compiler
+- External libraries
 
 
 JSX-Typescript:
