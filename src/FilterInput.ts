@@ -1,13 +1,13 @@
 import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 
-class FilterInput extends PureComponent {
-    static get propTypes() {
-        return {
-            onChange: React.PropTypes.func.isRequired,
-            onRateChange: React.PropTypes.func.isRequired
-        };
-    }
+interface Props {
+    onChange: React.FormEventHandler;
+    onRateChange: React.FormEventHandler;
+}
+
+class FilterInput extends PureComponent<Props, void> {
+    private _useReact = React;
 
     render() {
         return (
@@ -27,7 +27,7 @@ class FilterInput extends PureComponent {
     }
 }
 
-let styles = {
+var styles = {
     ratingFilterLabel: {
         marginLeft: 5
     }

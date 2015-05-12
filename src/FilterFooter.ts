@@ -1,19 +1,19 @@
-import { clearExclusions, redo, undo } from "./Actions";
+import Actions = require("./Actions");
 import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 
-class FilterFooter extends PureComponent {
-    static get propTypes() {
-        return {
-            excluded: React.PropTypes.number.isRequired
-        };
-    }
+interface Props {
+    excluded: number;
+}
+
+class FilterFooter extends PureComponent<Props, any> {
+    private _useReact = React;
 
     render() {
         var exclusionElement;
 
         if (this.props.excluded) {
-            exclusionElement = <a href="#" onClick={clearExclusions}>
+            exclusionElement = <a href="#" onClick={Actions.clearExclusions}>
                                 Clear exclusions ({this.props.excluded})
                                </a>;
         } else {
@@ -24,15 +24,15 @@ class FilterFooter extends PureComponent {
             <div>
                 {exclusionElement}
                 <div style={styles.undoRedoContainer}>
-                    <a href="#" onClick={undo}>Undo</a>
-                    <a href="#" onClick={redo} style={styles.redoLink}>Redo</a>
+                    <a href="#" onClick={Actions.undo}>Undo</a>
+                    <a href="#" onClick={Actions.redo} style={styles.redoLink}>Redo</a>
                 </div>
             </div>
         );
     }
 }
 
-let styles = {
+var styles = {
     redoLink: {
         marginLeft: 5
     },

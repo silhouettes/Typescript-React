@@ -1,1 +1,1 @@
-///<reference path="react-addons.d.ts"/>
+///<reference path="_common-references.d.ts"/>

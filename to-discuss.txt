@@ -1,0 +1,17 @@
+Talk about:
+- Modules
+- Live reload
+- Source maps & debugging
+- Profiling
+- Syntax highlighting/intellisense/editors (ts project?)
+- ES6
+- Test frameworks
+- SASS
+
+
+JSX-Typescript:
+- No ES6 support
+- React import can be optimized out
+- No typescript definition for Reflux (i.e. limited support for smaller libraries)
+
+

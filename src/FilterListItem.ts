@@ -1,30 +1,31 @@
-import { excludeItem } from "./Actions";
+import Actions = require("./Actions");
 import PureComponent = require("./utils/PureComponent");
+import ES6Utils = require("./utils/ES6Utils");
 import React = require("react/addons");
 
-class FilterListItem extends PureComponent {
-    static get propTypes() {
-        return {
-            name: React.PropTypes.string.isRequired,
-            rating: React.PropTypes.number.isRequired,
-            style: React.PropTypes.any.isRequired
-        }
-    }
+interface Props {
+    name: string;
+    rating: number;
+    style: any;
+}
+
+class FilterListItem extends PureComponent<Props, any> {
+    private _useReact = React;
 
     render() {
-        let { name, rating, style } = this.props;
-        let listItemStyle = Object.assign(style, styles.listItem);
+        var { name, rating, style } = this.props;
+        var listItemStyle = ES6Utils.assign(style, styles.listItem);
 
         return (
             <li style={listItemStyle}>
                 <span>{name} ({rating}/10)</span>
-                <a style={styles.excludeLink} onClick={excludeItem.bind(null, name)} href="#">Exclude</a>
+                <a style={styles.excludeLink} onClick={Actions.excludeItem.bind(null, name)} href="#">Exclude</a>
             </li>
         );
     }
 }
 
-let styles = {
+var styles = {
     excludeLink: {
         marginLeft: 5
     },

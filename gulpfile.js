@@ -14,7 +14,6 @@ var onWebPackFinished = function (done, error, stats) {
     	throw new gutil.PluginError("webpack", "Project has errors", { showStack: true });
     } else if (jsonStats.warnings.length > 0) {
     	console.log(jsonStats.warnings.toString());
-    	throw new gutil.PluginError("webpack", "Project has warnings", { showStack: true });
     }
 
     done();

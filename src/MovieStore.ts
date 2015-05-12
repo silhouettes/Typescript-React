@@ -2,7 +2,7 @@ import Actions = require("./Actions");
 import Immutable = require("immutable");
 import Reflux = require("reflux");
 
-let MovieStore = Reflux.createStore({
+var MovieStore = Reflux.createStore({
     listenables: Actions,
 
     currentState: Immutable.fromJS({

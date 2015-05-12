@@ -1,13 +1,14 @@
 import React = require("react/addons");
+var Perf = React.addons.Perf;
 
-class Profiler extends React.Component {
+class Profiler extends React.Component<{}, any> {
     startProfiling() {
-        React.addons.Perf.start();
+        Perf.start();
     }
 
     stopProfiling() {
-        React.addons.Perf.stop();
-        React.addons.Perf.printDOM();
+        Perf.stop();
+        Perf.printDOM(Perf.getLastMeasurements());
     }
 
     render() {
@@ -21,7 +22,7 @@ class Profiler extends React.Component {
     }
 }
 
-let styles = {
+var styles = {
     container: {
         marginTop: 10
     },

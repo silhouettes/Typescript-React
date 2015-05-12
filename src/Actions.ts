@@ -1,6 +1,6 @@
 import Reflux = require("reflux");
 
-let Actions = Reflux.createActions([
+var Actions = Reflux.createActions([
     "clearExclusions",
     "excludeItem",
     "redo",
