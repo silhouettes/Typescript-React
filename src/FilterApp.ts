@@ -37,7 +37,7 @@ class FilterApp extends PureComponent<{}, any> {
 
     render() {
         var exclusionCount = this.state.data.get("exclusions").size;
-        
+
         return React.jsx(`
             <div>
                 <h1>Movie recommendations</h1>
