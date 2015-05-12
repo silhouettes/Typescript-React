@@ -11,26 +11,26 @@ interface Props {
 class FilterList extends PureComponent<Props, void> {
     render() {
         // Filter the list of data based on the current query
-        var filteredList = this.props.data.get("movies")
+        let filteredList = this.props.data.get("movies")
                             .filter(m => m.get("name").toLowerCase().match(this.props.query.toLowerCase()) &&
                                          m.get("rating") > (this.props.rateLimit ? 7 : 0) &&
                                          !this.props.data.get("exclusions").contains(m.get("name")));
 
         // Determine the highest rating amongst the list
-        var highestRating = filteredList
+        let highestRating = filteredList
                             .map(i => i.get("rating"))
                             .max();
 
-        var styleBuilder = (rating) => rating === highestRating ? styles.highestRatedMovie : {};
+        let styleBuilder = (rating) => rating === highestRating ? styles.highestRatedMovie : {};
 
-        var element;
+        let element;
 
         if (filteredList.size > 0) {
             // Map each filtered item to its component equivalent
-            var listItems = filteredList.map((movie: any) => {
-                var name: string = movie.get("name");
-                var rating: number = movie.get("rating");
-                var style = styleBuilder(movie.get("rating"));
+            let listItems = filteredList.map((movie: any) => {
+                let name: string = movie.get("name");
+                let rating: number = movie.get("rating");
+                let style = styleBuilder(movie.get("rating"));
                 return React.jsx(`
                     <FilterListItem
                         key={name}
@@ -50,7 +50,7 @@ class FilterList extends PureComponent<Props, void> {
     }
 }
 
-var styles = {
+let styles = {
     highestRatedMovie: {
         fontWeight: "bold"
     }
