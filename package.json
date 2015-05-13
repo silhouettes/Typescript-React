@@ -10,7 +10,7 @@
     "gulp": "^3.8.11",
     "gulp-nodemon": "^2.0.2",
     "gulp-util": "^3.0.4",
-    "immutable": "^3.6.2",
+    "immutable": "^3.7.2",
     "react-hot-loader": "^1.2.2",
     "shelljs": "^0.3.0",
     "source-map-support": "^0.2.10",

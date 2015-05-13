@@ -9,7 +9,7 @@ import React = require("react/addons");
 import Reflux = require("reflux");
 
 interface State {
-    data?: any;
+    data?: MovieStore.MovieCollection;
     query?: string;
     rateLimit?: boolean;
 }
@@ -22,7 +22,7 @@ class FilterApp extends PureComponent<void, State> {
         super();
 
         this.state = {
-            data: MovieStore.currentState,
+            data: MovieStore.store.currentState,
             query: "",
             rateLimit: false
         };
@@ -42,7 +42,7 @@ class FilterApp extends PureComponent<void, State> {
     }
 
     render() {
-        let exclusionCount = this.state.data.get("exclusions").size;
+        let exclusionCount = this.state.data.exclusions.size;
 
         return React.jsx(`
             <div>
@@ -65,6 +65,6 @@ class FilterApp extends PureComponent<void, State> {
 // This hooks up the FilterApp component to the MovieStore,
 // which forces a re-render of the app whenever state is change
 ES6Utils.assign(FilterApp.prototype,
-              Reflux.connect(MovieStore, "data"));
+              Reflux.connect(MovieStore.store, "data"));
 
 export = FilterApp;
