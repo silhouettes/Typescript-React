@@ -74,6 +74,7 @@
     <None Include="src\Profiler.ts" />
     <None Include="src\utils\ES6Utils.ts" />
     <None Include="src\utils\PureComponent.ts" />
+    <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />

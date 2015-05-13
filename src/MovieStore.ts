@@ -2,24 +2,35 @@ import Actions = require("./Actions");
 import Immutable = require("immutable");
 import Reflux = require("reflux");
 
-var MovieStore = Reflux.createStore({
+let MovieConstructor: Immutable.Record.Class = Immutable.Record({ name: "", rating: 0 });
+export interface Movie extends Immutable.Record {
+    name?: string;
+    rating?: number;
+}
+
+let MovieCollectionConstructor: Immutable.Record.Class = Immutable.Record({ exclusions: [], movies: [] });
+export interface MovieCollection extends Immutable.Record {
+    exclusions?: Immutable.List<string>;
+    movies?: Immutable.List<Movie>;
+}
+
+export var store = Reflux.createStore({
     listenables: Actions,
 
-    currentState: Immutable.fromJS({
-        exclusions: [],
-
-        movies: [
-            { name: "Away From Her", rating: 8 },
-            { name: "Big Fish", rating: 7 },
-            { name: "Fantastic Mr. Fox", rating: 8 },
-            { name: "Lawrence Anyways", rating: 8 },
-            { name: "Life of Pi", rating: 6 },
-            { name: "Memento", rating: 6 },
-            { name: "Pan's Labyrinth", rating: 6 },
-            { name: "Solaris", rating: 10 },
-            { name: "The Fountain", rating: 8 },
-            { name: "Wristcutters: A Love Story", rating: 9 }
-        ]
+    currentState: new MovieCollectionConstructor({
+        exclusions: Immutable.List<string>(),
+        movies: Immutable.List<Movie>([
+            new MovieConstructor({ name: "Away From Her", rating: 8 }),
+            new MovieConstructor({ name: "Big Fish", rating: 7 }),
+            new MovieConstructor({ name: "Fantastic Mr. Fox", rating: 8 }),
+            new MovieConstructor({ name: "Lawrence Anyways", rating: 8 }),
+            new MovieConstructor({ name: "Life of Pi", rating: 6 }),
+            new MovieConstructor({ name: "Memento", rating: 6 }),
+            new MovieConstructor({ name: "Pan's Labyrinth", rating: 6 }),
+            new MovieConstructor({ name: "Solaris", rating: 10 }),
+            new MovieConstructor({ name: "The Fountain", rating: 8 }),
+            new MovieConstructor({ name: "Wristcutters: A Love Story", rating: 9 })
+        ])
     }),
 
     nextState: null,
@@ -56,5 +67,3 @@ var MovieStore = Reflux.createStore({
         this.trigger(this.currentState);
     }
 });
-
-export = MovieStore;

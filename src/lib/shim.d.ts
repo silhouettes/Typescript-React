@@ -1,4 +1,6 @@
-// Typescript shims for anything not available on DefinitelyTyped
+/**
+ * [CloudDevServAddon] Typescript shims for anything not available on DefinitelyTyped
+ */
 
 declare module "reflux" {
     function createStore(...input: any[]): any;

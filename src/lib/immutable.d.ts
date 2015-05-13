@@ -1061,22 +1061,36 @@ declare module 'immutable' {
    *     var myRecord = new ABRecord(b:3)
    *     myRecord.getAB() // 4
    *
+   *  <CloudDevServAddon>
    */
   export module Record {
     interface Class {
-      new (): Map<string, any>;
-      new (values: {[key: string]: any}): Map<string, any>;
-      new (values: Iterable<string, any>): Map<string, any>; // deprecated
+      new (): Record;
+      new (values: {[key: string]: any}): Record;
+      new (values: Iterable<string, any>): Record; // deprecated
+      new (values: ShallowObject): Record;
 
       (): Map<string, any>;
-      (values: {[key: string]: any}): Map<string, any>;
-      (values: Iterable<string, any>): Map<string, any>; // deprecated
+      (values: {[key: string]: any}): Record;
+      (values: Iterable<string, any>): Record; // deprecated
+      (values: ShallowObject): Record;
     }
+  }
+
+  export interface Record extends Map<string, any> {
+  }
+
+  export interface ShallowObject extends Object {
   }
 
   export function Record(
     defaultValues: {[key: string]: any}, name?: string
   ): Record.Class;
+
+  export function Record(
+    defaultValues: ShallowObject, name?: string
+  ): Record.Class;
+  /** </CloudDevServAddon> */
 
 
   /**
@@ -1102,7 +1116,7 @@ declare module 'immutable' {
    * example, no intermediate data structures are ever created, filter is only
    * called three times, and map is only called twice:
    *
-   *     console.log(evenSquares.get(1)); // 9
+   *     console.log(oddSquares.get(1)); // 9
    *
    * Seq allows for the efficient chaining of operations,
    * allowing for the expression of logic that can otherwise be very tedious:

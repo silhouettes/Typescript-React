@@ -1,9 +1,17 @@
+import Immutable = require("immutable");
+import MovieStore = require("./MovieStore");
 import FilterListItem = require("./FilterListItem");
 import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 
+let styles = {
+    highestRatedMovie: {
+        fontWeight: "bold"
+    }
+}
+
 interface Props {
-    data: any;
+    data: MovieStore.MovieCollection;
     query: string;
     rateLimit: boolean;
 }
@@ -11,32 +19,32 @@ interface Props {
 class FilterList extends PureComponent<Props, void> {
     render() {
         // Filter the list of data based on the current query
-        var filteredList = this.props.data.get("movies")
-                            .filter(m => m.get("name").toLowerCase().match(this.props.query.toLowerCase()) &&
-                                         m.get("rating") > (this.props.rateLimit ? 7 : 0) &&
-                                         !this.props.data.get("exclusions").contains(m.get("name")));
+        let { data, query, rateLimit } = this.props;
+        let filteredList: Immutable.Iterable<number, MovieStore.Movie> = data.movies
+                                .filter((movie: MovieStore.Movie) => {
+                                    return movie.name.toLowerCase().match(query.toLowerCase()) &&
+                                         movie.rating > (rateLimit ? 7 : 0) &&
+                                         !data.exclusions.contains(movie.name);
+                                });
 
         // Determine the highest rating amongst the list
-        var highestRating = filteredList
+        let highestRating: number = filteredList
                             .map(i => i.get("rating"))
                             .max();
 
-        var styleBuilder = (rating) => rating === highestRating ? styles.highestRatedMovie : {};
+        let styleBuilder = (rating) => rating === highestRating ? styles.highestRatedMovie : {};
 
-        var element;
+        let element;
 
         if (filteredList.size > 0) {
             // Map each filtered item to its component equivalent
-            var listItems = filteredList.map((movie: any) => {
-                var name: string = movie.get("name");
-                var rating: number = movie.get("rating");
-                var style = styleBuilder(movie.get("rating"));
+            let listItems = filteredList.map((movie: MovieStore.Movie) => {
                 return React.jsx(`
                     <FilterListItem
-                        key={name}
-                        name={name}
-                        rating={rating}
-                        style={style} />
+                        key={movie.name}
+                        name={movie.name}
+                        rating={movie.rating}
+                        style={styleBuilder(movie.rating)} />
                 `);
             });
 
@@ -47,12 +55,6 @@ class FilterList extends PureComponent<Props, void> {
         }
         
         return element;
-    }
-}
-
-var styles = {
-    highestRatedMovie: {
-        fontWeight: "bold"
     }
 }
 

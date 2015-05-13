@@ -4,8 +4,14 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 declare module "react/addons" {
-    // React jsx shim
+    /**
+     * <CloudDevServAddon>
+     * React.jsx shim, courtesy of ts-jsx-loader
+     */
     function jsx(jsx?: string): ReactElement<any>;
+    function __spread(...args: any[]): any; // for JSX Spread Attributes
+
+    /** </CloudDevServAddon> */
 
     //
     // React Elements
