@@ -30,3 +30,41 @@ Build:
 
 tsconfig.json vs csproj
 May need to constantly update csproj
+
+
+CSS:
+- React inline/Radium
+- Sass
+- Converters
+
+Test
+- Jasmine
+- Mocha
+- Karma (runner)
+- Webdriver (E2E tests)
+
+Look at .d.ts dependency management (tsd)
+
+-------------------------------------------------------------------
+Styles
+
+Inline style pros:
+- Don't need to work in two files
+- Might need to do this for react native anyway
+- Don't need to write in a different language
+- Scope is handled (no more CSS selectors)
+- Have the flexibility to control the degree of sharing/separation
+- Easier to reason about what styles are applied to a given component
+- Everything in http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html
+
+Inline style cons:
+- JS files become cluttered (?)
+- Limitations that need other extensions, eg. radium
+- Documents become much larger (server-side rendering or client-side?) - gzip?
+- Can't turn classes on and off when debugging - can only do it per element - live reload
+- Caching not as good as JS changes more than CSS
+
+Debug CSS build
+Be careful using id's
+I don't recommend mixing inline styles and external css as this complicates things
+There are tools to convert between inline styles and external css

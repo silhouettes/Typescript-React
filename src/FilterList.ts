@@ -32,8 +32,6 @@ class FilterList extends PureComponent<Props, void> {
                             .map(i => i.get("rating"))
                             .max();
 
-        let styleBuilder = (rating) => rating === highestRating ? styles.highestRatedMovie : {};
-
         let element;
 
         if (filteredList.size > 0) {
@@ -44,7 +42,7 @@ class FilterList extends PureComponent<Props, void> {
                         key={movie.name}
                         name={movie.name}
                         rating={movie.rating}
-                        style={styleBuilder(movie.rating)} />
+                        style={movie.rating === highestRating ? styles.highestRatedMovie : {}} />
                 `);
             });
 
