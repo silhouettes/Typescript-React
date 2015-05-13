@@ -6,7 +6,7 @@ interface Props {
     excluded: number;
 }
 
-class FilterFooter extends PureComponent<Props, any> {
+class FilterFooter extends PureComponent<Props, void> {
     render() {
         var exclusionElement;
 

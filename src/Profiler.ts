@@ -1,7 +1,7 @@
 import React = require("react/addons");
 var Perf = React.addons.Perf;
 
-class Profiler extends React.Component<{}, any> {
+class Profiler extends React.Component<void, void> {
     startProfiling() {
         Perf.start();
     }
