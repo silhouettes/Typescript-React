@@ -20,7 +20,7 @@ Intellisense:
 - Sublime seems to be using auto-complete, can't figure out why
 
 Compiler:
-- Is managed by ts-loader/package.json for build, as well as Visual Studio .csproj, and requires installation on the system
+- Is managed by ts-loader/package.json for build, as well as Visual Studio .csproj, and requires VS extension
 - Sublime uses our typescript-sublime and will be on edge. VSCode ships with ts 1.5.0 beta support.
 
 Build:
@@ -29,3 +29,4 @@ Build:
 
 
 tsconfig.json vs csproj
+May need to constantly update csproj
