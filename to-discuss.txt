@@ -1,3 +1,11 @@
+Sections:
+Typescript/ES6
+Modules
+Webpack/React hot loader
+Immutable
+Styles
+Test
+
 Talk about:
 - Modules
 - Live reload
