@@ -29,7 +29,7 @@ gulp.task("build-server", function (done) {
     webpack(config, onWebPackFinished.bind(/*this*/ null, /*firstArg*/ done));
 });
 
-gulp.task("serve", ["build"], function () {
+gulp.task("release", ["build"], function () {
     nodemon({
         script: "./dist/Server.js",
         watch: ["./src/Server"],
@@ -38,13 +38,20 @@ gulp.task("serve", ["build"], function () {
 });
 
 var sh = require("shelljs");
-gulp.task("serve-webpack", function (done) {
+gulp.task("debug", function (done) {
     // The dev server's Node API doesn't support inline
     // mode so I'm just using the CLI to keep the config "clean"
-    sh.exec("webpack-dev-server --hot --inline --colors --content-base='./src' --config='webpack.client.js'",
+    sh.exec("webpack-dev-server --hot --inline --colors --content-base='./src' --config='webpack.debug.js'",
+        function () { done(); });
+});
+
+gulp.task("dev", function (done) {
+    // The dev server's Node API doesn't support inline
+    // mode so I'm just using the CLI to keep the config "clean"
+    sh.exec("webpack-dev-server --hot --inline --colors --content-base='./src' --config='webpack.dev.js'",
         function () { done(); });
 });
 
 gulp.task("build", ["build-client", "build-server"]);
 
-gulp.task("default", ["serve"]);
+gulp.task("default", ["dev"]);

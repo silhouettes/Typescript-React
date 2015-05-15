@@ -1,3 +1,4 @@
+var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
@@ -9,17 +10,14 @@ module.exports = {
         publicPath: "/assets/"
     },
     module: {
-        loaders: [
-            { test: /\.ts$/, exclude: /node_modules/, loaders: ["ts-loader", "ts-jsx-loader"] }
+        loaders: [{
+            test: /\.ts$/,
+            include: path.join(__dirname, 'src'),
+            loaders: ["react-hot", "ts-loader", "ts-jsx-loader"] }
         ]
     },
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.js', '.ts']
     },
-    devtool: "source-map",
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: false
-        })
-    ]
+    devtool: "eval"
 };
