@@ -8,3 +8,6 @@ declare module "reflux" {
     function connect(...input: any[]): any;
 }
 
+declare module "radium" {
+    function Enhancer<T>(classType: T): T;
+}

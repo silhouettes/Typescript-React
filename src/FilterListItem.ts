@@ -2,6 +2,7 @@ import Actions = require("./Actions");
 import PureComponent = require("./utils/PureComponent");
 import ES6Utils = require("./utils/ES6Utils");
 import React = require("react/addons");
+import Radium = require("radium");
 
 interface Props {
     name: string;
@@ -25,11 +26,14 @@ class FilterListItem extends PureComponent<Props, void> {
 
 var styles = {
     excludeLink: {
-        marginLeft: 5
+        marginLeft: 5,
+        ":hover": {
+            color: "blue"
+        }
     },
     listItem: {
         marginTop: 3
     }
 }
 
-export = FilterListItem;
+export = Radium.Enhancer(FilterListItem);
