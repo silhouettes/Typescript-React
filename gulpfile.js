@@ -41,14 +41,14 @@ var sh = require("shelljs");
 gulp.task("debug", function (done) {
     // The dev server's Node API doesn't support inline
     // mode so I'm just using the CLI to keep the config "clean"
-    sh.exec("webpack-dev-server --hot --inline --colors --content-base='./src' --config='webpack.debug.js'",
+    sh.exec("webpack-dev-server --hot --inline --colors --content-base=./src --config=webpack.debug.js",
         function () { done(); });
 });
 
 gulp.task("dev", function (done) {
     // The dev server's Node API doesn't support inline
     // mode so I'm just using the CLI to keep the config "clean"
-    sh.exec("webpack-dev-server --hot --inline --colors --content-base='./src' --config='webpack.dev.js'",
+    sh.exec("webpack-dev-server --hot --inline --colors --content-base=./src --config=webpack.dev.js",
         function () { done(); });
 });
 

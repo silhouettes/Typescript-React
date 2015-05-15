@@ -72,6 +72,11 @@ Inline style cons:
 - Can't turn classes on and off when debugging - can only do it per element - live reload
 - Caching not as good as JS changes more than CSS
 
+
+Live Reload:
+- Webpack/browserify reload
+- React-hot-loader, LiveReactLoad
+
 Debug CSS build
 Be careful using id's
 I don't recommend mixing inline styles and external css as this complicates things
