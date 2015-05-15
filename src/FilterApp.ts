@@ -8,6 +8,10 @@ import ES6Utils = require("./utils/ES6Utils");
 import React = require("react/addons");
 import Reflux = require("reflux");
 
+let style = {
+    margin: "30px"
+};
+
 interface State {
     data?: MovieStore.MovieCollection;
     query?: string;
@@ -45,7 +49,7 @@ class FilterApp extends PureComponent<void, State> {
         let exclusionCount = this.state.data.exclusions.size;
 
         return React.jsx(`
-            <div>
+            <div style={style}>
                 <h1>Movie recommendations</h1>
                 <FilterInput
                     onChange={this._handleChange}

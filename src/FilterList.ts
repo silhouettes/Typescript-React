@@ -4,7 +4,14 @@ import FilterListItem = require("./FilterListItem");
 import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 
+let borderStyle = "1px solid black";
 let styles = {
+    container: {
+        borderTop: borderStyle,
+        borderBottom: borderStyle,
+        paddingTop: "10px",
+        paddingBottom: "10px"
+    },
     highestRatedMovie: {
         fontWeight: "bold"
     }
@@ -46,7 +53,7 @@ class FilterList extends PureComponent<Props, void> {
                 `);
             });
 
-            element = React.jsx(`<ol>{listItems}</ol>`);
+            element = React.jsx(`<ol style={styles.container}>{listItems}</ol>`);
         }
         else {
             element = React.jsx(`<div style={{ marginBottom: 5 }}>No recommendations match your criteria!</div>`);
