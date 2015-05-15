@@ -9,5 +9,5 @@ declare module "reflux" {
 }
 
 declare module "radium" {
-    function Enhancer<T>(classType: T): T;
+    function Enhancer<T>(componentType: T): T;
 }
