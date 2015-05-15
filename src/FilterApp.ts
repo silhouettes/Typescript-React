@@ -8,10 +8,6 @@ import ES6Utils = require("./utils/ES6Utils");
 import React = require("react/addons");
 import Reflux = require("reflux");
 
-let style = {
-    margin: "30px"
-};
-
 interface State {
     data?: MovieStore.MovieCollection;
     query?: string;
@@ -70,5 +66,9 @@ class FilterApp extends PureComponent<void, State> {
 // which forces a re-render of the app whenever state is change
 ES6Utils.assign(FilterApp.prototype,
               Reflux.connect(MovieStore.store, "data"));
+              
+var style = {
+    margin: "30px"
+};
 
 export = FilterApp;

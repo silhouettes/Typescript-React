@@ -4,19 +4,6 @@ import FilterListItem = require("./FilterListItem");
 import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 
-let borderStyle = "1px solid black";
-let styles = {
-    container: {
-        borderTop: borderStyle,
-        borderBottom: borderStyle,
-        paddingTop: "10px",
-        paddingBottom: "10px"
-    },
-    highestRatedMovie: {
-        fontWeight: "bold"
-    }
-}
-
 interface Props {
     data: MovieStore.MovieCollection;
     query: string;
@@ -60,6 +47,19 @@ class FilterList extends PureComponent<Props, void> {
         }
         
         return element;
+    }
+}
+
+var borderStyle = "1px solid black";
+var styles = {
+    container: {
+        borderTop: borderStyle,
+        borderBottom: borderStyle,
+        paddingTop: "10px",
+        paddingBottom: "10px"
+    },
+    highestRatedMovie: {
+        fontWeight: "bold"
     }
 }
 

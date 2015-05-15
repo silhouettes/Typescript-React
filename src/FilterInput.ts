@@ -1,12 +1,6 @@
 import PureComponent = require("./utils/PureComponent");
 import React = require("react/addons");
 
-let styles = {
-    ratingFilterLabel: {
-        marginLeft: 5
-    }
-}
-
 interface Props {
     onChange: React.FormEventHandler;
     onRateChange: React.FormEventHandler;
@@ -28,6 +22,12 @@ class FilterInput extends PureComponent<Props, void> {
                 </label>
             </form>
         `);
+    }
+}
+
+var styles = {
+    ratingFilterLabel: {
+        marginLeft: 5
     }
 }
 

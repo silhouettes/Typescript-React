@@ -1,9 +1,11 @@
 Sections:
+Problem definition
 Typescript/ES6
-Modules
-Webpack/React hot loader
+Modules and external libraries
 Immutable
 Styles
+	- Pseudo-selectors and media queries (Radium)
+Webpack/React hot loader
 Test
 
 Talk about:

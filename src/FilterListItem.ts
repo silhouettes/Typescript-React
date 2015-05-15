@@ -3,15 +3,6 @@ import PureComponent = require("./utils/PureComponent");
 import ES6Utils = require("./utils/ES6Utils");
 import React = require("react/addons");
 
-let styles = {
-    excludeLink: {
-        marginLeft: 5
-    },
-    listItem: {
-        marginTop: 3
-    }
-}
-
 interface Props {
     name: string;
     rating: number;
@@ -29,6 +20,15 @@ class FilterListItem extends PureComponent<Props, void> {
                 <a style={styles.excludeLink} onClick={Actions.excludeItem.bind(null, name)} href="#">Exclude</a>
             </li>
         `);
+    }
+}
+
+var styles = {
+    excludeLink: {
+        marginLeft: 5
+    },
+    listItem: {
+        marginTop: 3
     }
 }
 
