@@ -13,10 +13,9 @@ interface Props {
 class FilterListItem extends PureComponent<Props, void> {
     render() {
         let { name, rating, style } = this.props;
-        let listItemStyle = ES6Utils.assign(style, styles.listItem);
 
         return React.jsx(`
-            <li style={listItemStyle}>
+            <li style={[this.props.style, styles.listItem]}>
                 <span>{name} ({rating}/10)</span>
                 <a style={styles.excludeLink} onClick={Actions.excludeItem.bind(null, name)} href="#">Exclude</a>
             </li>

@@ -7,6 +7,7 @@ import PureComponent = require("./utils/PureComponent");
 import ES6Utils = require("./utils/ES6Utils");
 import React = require("react/addons");
 import Reflux = require("reflux");
+import Radium = require("radium");
 
 interface State {
     data?: MovieStore.MovieCollection;
@@ -68,7 +69,10 @@ ES6Utils.assign(FilterApp.prototype,
               Reflux.connect(MovieStore.store, "data"));
               
 var style = {
-    margin: "30px"
+    margin: "30px",
+    '@media (max-width: 500px)': {
+        fontSize: "10pt"
+    }
 };
 
-export = FilterApp;
+export = Radium.Enhancer(FilterApp);

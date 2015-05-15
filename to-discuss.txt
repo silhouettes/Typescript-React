@@ -6,6 +6,8 @@ Typescript/ES6
 Immutable
 Styles
 	- Pseudo-selectors and media queries (Radium)
+		- Perf? http://jsperf.com/classes-vs-inline-styles/2
+		- Moving the computation from the browser to the js
 Webpack/React hot loader
 Test
 l

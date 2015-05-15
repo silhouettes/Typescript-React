@@ -1,5 +1,4 @@
 import React = require("react/addons");
-import Radium = require("radium");
 
 // This is simply a helper that allows every
 // component to inherit from a base-class instead
