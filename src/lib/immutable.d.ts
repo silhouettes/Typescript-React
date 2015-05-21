@@ -1063,6 +1063,8 @@ declare module 'immutable' {
    *
    *  <CloudDevServAddon>
    */
+  type Record = Map<string, any>;
+  type ShallowObject = Object;
   export module Record {
     interface Class {
       new (): Record;
@@ -1070,18 +1072,13 @@ declare module 'immutable' {
       new (values: Iterable<string, any>): Record; // deprecated
       new (values: ShallowObject): Record;
 
-      (): Map<string, any>;
+      (): Record;
       (values: {[key: string]: any}): Record;
       (values: Iterable<string, any>): Record; // deprecated
       (values: ShallowObject): Record;
     }
   }
-
-  export interface Record extends Map<string, any> {
-  }
-
-  export interface ShallowObject extends Object {
-  }
+  
 
   export function Record(
     defaultValues: {[key: string]: any}, name?: string
@@ -1090,6 +1087,18 @@ declare module 'immutable' {
   export function Record(
     defaultValues: ShallowObject, name?: string
   ): Record.Class;
+  
+  /*
+  export module Record {
+    interface Class<T> {
+      new (): thing extends T, Record;
+    }
+  }
+  
+  export function Record<T>(
+    defaultValues: T, name?: string
+  ): Record.Class<T>;
+  */
   /** </CloudDevServAddon> */
 
 

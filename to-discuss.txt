@@ -1,3 +1,18 @@
+Immutable Record
+
+I want to put in a type T, and get out a type that has both T and Record
+When I have interfaces inheriting from each other, I want the methods to return the derived class
+class ABRecord extends Immutable.Record({ a: 1, b: 2 })
+// I want to have a wrapping class and declare it to be immutable
+Radium: I want to return a generic type
+
+fromJS?
+
+
+
+
+
+
 Sections:
 Typescript/ES6
 	- Problem definition

@@ -2,6 +2,8 @@ import Actions = require("./Actions");
 import Immutable = require("immutable");
 import Reflux = require("reflux");
 
+// interface Movie
+// interface extends Movie, Record
 let MovieConstructor: Immutable.Record.Class = Immutable.Record({ name: "", rating: 0 });
 export interface Movie extends Immutable.Record {
     name?: string;
@@ -13,6 +15,15 @@ export interface MovieCollection extends Immutable.Record {
     exclusions?: Immutable.List<string>;
     movies?: Immutable.List<Movie>;
 }
+
+/*export class MovieClass extends Immutable.Record {
+    public exclusions: Immutable.List<string>;
+    public movies: Immutable.List<Movie>;
+    
+    public static createMovie(): MovieClass {
+        return new MovieCollectionConstructor();
+    }
+}*/
 
 export var store = Reflux.createStore({
     listenables: Actions,
