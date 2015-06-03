@@ -46,17 +46,17 @@ class FilterApp extends PureComponent<void, State> {
         let exclusionCount = this.state.data.exclusions.size;
 
         return React.jsx(`
-            <div style={style}>
+            <div style=${style}>
                 <h1>Movie recommendations</h1>
                 <FilterInput
-                    onChange={this._handleChange}
-                    onRateChange={this._handleRateChange} />
+                    onChange=${this._handleChange}
+                    onRateChange=${this._handleRateChange} />
                 <FilterList
-                    data={this.state.data}
-                    query={this.state.query}
-                    rateLimit={this.state.rateLimit} />
+                    data=${this.state.data}
+                    query=${this.state.query}
+                    rateLimit=${this.state.rateLimit} />
                 <FilterFooter
-                    excluded={exclusionCount} />
+                    excluded=${exclusionCount} />
                 <Profiler />
             </div>
         `);

@@ -12,8 +12,8 @@ class FilterFooter extends PureComponent<Props, void> {
 
         if (this.props.excluded) {
             exclusionElement = React.jsx(`
-                                    <a href="#" onClick={Actions.clearExclusions}>
-                                        Clear exclusions ({this.props.excluded})
+                                    <a href="#" onClick=${Actions.clearExclusions}>
+                                        Clear exclusions (${this.props.excluded})
                                     </a>
                                 `);
         } else {
@@ -22,10 +22,10 @@ class FilterFooter extends PureComponent<Props, void> {
 
         return React.jsx(`
             <div>
-                {exclusionElement}
-                <div style={styles.undoRedoContainer}>
-                    <a href="#" onClick={Actions.undo}>Undo</a>
-                    <a href="#" onClick={Actions.redo} style={styles.redoLink}>Redo</a>
+                ${exclusionElement}
+                <div style=${styles.undoRedoContainer}>
+                    <a href="#" onClick=${Actions.undo}>Undo</a>
+                    <a href="#" onClick=${Actions.redo} style=${styles.redoLink}>Redo</a>
                 </div>
             </div>
         `);

@@ -12,13 +12,13 @@ class FilterInput extends PureComponent<Props, void> {
             <form>
                 <input
                     type="text"
-                    onChange={this.props.onChange}
+                    onChange=${this.props.onChange}
                     placeholder="Type to search..." />
                 <label>
-                    <span style={styles.ratingFilterLabel}>Show only highly-rated films?</span>
+                    <span style=${styles.ratingFilterLabel}>Show only highly-rated films?</span>
                     <input
                         type="checkbox"
-                        onChange={this.props.onRateChange} />
+                        onChange=${this.props.onRateChange} />
                 </label>
             </form>
         `);

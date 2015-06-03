@@ -33,17 +33,17 @@ class FilterList extends PureComponent<Props, void> {
             let listItems = filteredList.map((movie: MovieStore.Movie) => {
                 return React.jsx(`
                     <FilterListItem
-                        key={movie.name}
-                        name={movie.name}
-                        rating={movie.rating}
-                        style={movie.rating === highestRating ? styles.highestRatedMovie : {}} />
+                        key=${movie.name}
+                        name=${movie.name}
+                        rating=${movie.rating}
+                        style=${movie.rating === highestRating ? styles.highestRatedMovie : {}} />
                 `);
             });
 
-            element = React.jsx(`<ol style={styles.container}>{listItems}</ol>`);
+            element = React.jsx(`<ol style=${styles.container}>${listItems}</ol>`);
         }
         else {
-            element = React.jsx(`<div style={{ marginBottom: 5 }}>No recommendations match your criteria!</div>`);
+            element = React.jsx(`<div style=${{ marginBottom: 5 }}>No recommendations match your criteria!</div>`);
         }
         
         return element;

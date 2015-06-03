@@ -15,9 +15,9 @@ class FilterListItem extends PureComponent<Props, void> {
         let { name, rating, style } = this.props;
 
         return React.jsx(`
-            <li style={[this.props.style, styles.listItem]}>
-                <span>{name} ({rating}/10)</span>
-                <a style={styles.excludeLink} onClick={Actions.excludeItem.bind(null, name)} href="#">Exclude</a>
+            <li style=${[this.props.style, styles.listItem]}>
+                <span>${name} (${rating}/10)</span>
+                <a style=${styles.excludeLink} onClick=${Actions.excludeItem.bind(null, name)} href="#">Exclude</a>
             </li>
         `);
     }

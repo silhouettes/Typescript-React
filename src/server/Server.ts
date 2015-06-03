@@ -26,7 +26,7 @@ server.get("/", (req: Express.Request, res: Express.Response) => {
                         <script src="/assets/Browser.js" defer />
                     </head>
                     <body
-                        dangerouslySetInnerHTML={{
+                        dangerouslySetInnerHTML=${{
                             __html: dynamicContent
                         }}>
                     </body>
